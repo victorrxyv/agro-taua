@@ -1,0 +1,767 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.info-container {
+    max-width: 1120px;
+    margin: auto;
+    width: 100%;
+    padding: 0 16px;
+}
+
+/* header */
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background: #01913a;
+}
+
+.header-content {
+    width: 100%;
+    height: 64px;
+    gap: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header img {
+    width: 100px;
+}
+
+.header-menu {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.header-links {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    justify-content: center;
+    overflow-x: auto;
+}
+
+.header-links a {
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: white;
+    transition: opacity .2s ease;
+}
+
+.header-links a:hover {
+    opacity: .75;
+}
+
+.link-monitora {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: #ffffff1f;
+    border: 1.5px solid rgba(255, 255, 255, .35);
+    color: #fff;
+    font-size: .8rem;
+    font-weight: 700;
+    padding: 0.38rem 0.85rem;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: opacity .2s ease, transform .2s ease;
+}
+
+.link-monitora:hover {
+    opacity: .85;
+    transform: translateY(-1px);
+}
+
+/* botão hamburger (fica oculto no desktop, aparece só no mobile) */
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: .4rem;
+}
+
+.menu-toggle .material-symbols-outlined {
+    font-size: 1.8rem;
+}
+
+/* hero */
+
+.hero {
+    width: 100%;
+    min-height: 91vh;
+    margin-top: 64px;
+    position: relative;
+    background: linear-gradient(90deg, rgba(0, 0, 0, .85) 0%, rgba(0, 0, 0, .65) 40%, rgba(0, 0, 0, .25) 100%),
+        url('../../public/img/fundotaua.jpg') center/cover no-repeat;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+}
+
+.hero-content {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.hero-text {
+    flex: 0 0 50%;
+    max-width: 50%;
+    color: #fff;
+    padding: 3rem 0;
+    align-self: center;
+}
+
+.hero-badge {
+    display: inline-block;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    color: #fff;
+    background: #ffffff1f;
+    border: 1.5px solid rgba(255, 255, 255, .35);
+    padding: .4rem .9rem;
+    border-radius: 100px;
+    margin-bottom: 1.2rem;
+}
+
+.hero-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1.2rem;
+}
+
+em {
+    font-style: normal;
+    color: #3ddc70;
+    display: block;
+}
+
+.hero-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #e8f5ec;
+    margin-bottom: 1.8rem;
+    max-width: 480px;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: .8rem 1.6rem;
+    border-radius: 100px;
+    font-size: .9rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform .2s ease, opacity .2s ease, box-shadow .2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    opacity: .92;
+}
+
+.btn-primary {
+    background: #01913a;
+    color: #fff;
+    border: 1.5px solid #01913a;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 6px 18px rgba(1, 145, 58, .35);
+}
+
+.btn-outline {
+    background: transparent;
+    color: #fff;
+    border: 1.5px solid #fff;
+}
+
+.hero-image {
+    flex: 0 0 50%;
+    max-width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 620px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    transform: translateY(35px); /* ajuste esse valor conforme a margem real */
+}
+
+/* animação de entrada do hero (toca ao carregar a página) */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-badge {
+    animation: fadeUp .6s ease both;
+}
+
+.hero-title {
+    animation: fadeUp .6s ease .1s both;
+}
+
+.hero-description {
+    animation: fadeUp .6s ease .2s both;
+}
+
+.hero-buttons {
+    animation: fadeUp .6s ease .3s both;
+}
+
+.hero-image {
+    animation: fadeUp .7s ease .2s both;
+}
+
+/* PROGRAMA */
+
+.programa {
+    width: 100%;
+    background: white;
+    padding: 4rem 0 5rem;
+}
+
+.programa-banner {
+    width: 100%;
+    border-radius: 16px;
+    padding: 3.5rem 3rem;
+    background: linear-gradient(135deg, #4d4d4d 0%, #1f1f1f88 50%, #0c0c0c48 100%),
+        url('../../public/img/fundocampus.jpg') center/cover no-repeat;
+    overflow: hidden;
+    margin-bottom: 2.5rem;
+}
+
+.programa-logo-wrap {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+.programa-logo {
+    width: 130px;
+}
+
+.programa-logo-tag {
+    align-self: flex-end;
+    margin-top: -0.4rem;
+    margin-right: 0.2rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #3ddc70;
+}
+
+.programa-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 0.8rem;
+}
+
+.programa-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #d9d9d9;
+    max-width: 560px;
+}
+
+.programa-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.programa-card {
+    background: rgb(242, 242, 242);
+    border-radius: 14px;
+    padding: 1.8rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.programa-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, .1);
+}
+
+.programa-card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+}
+
+.programa-card-icon .material-symbols-outlined {
+    color: #fff;
+    font-size: 1.4rem;
+}
+
+.icon-ovino {
+    background: #6b46c1;
+}
+
+.icon-agro {
+    background: #01913a;
+}
+
+.icon-api {
+    background: #e0a800;
+}
+
+.programa-card-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 0.6rem;
+}
+
+.programa-card-description {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: #5b6b7b;
+}
+
+/* SOBRE */
+
+.sobre {
+    width: 100%;
+    background: #f3f5f7;
+    padding: 4.5rem 0 5rem;
+}
+
+.sobre-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 2.5rem;
+}
+
+.sobre-badge {
+    display: inline-block;
+    width: fit-content;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    color: #01913a;
+    background: #e7f6ec;
+    border: 1.5px solid #c5ead2;
+    padding: .4rem .9rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+}
+
+.sobre-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.sobre-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 3rem;
+}
+
+.sobre-text {
+    flex: 0 0 55%;
+    max-width: 55%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.sobre-text p {
+    font-size: .95rem;
+    line-height: 1.7;
+    color: #4a4a4a;
+}
+
+.sobre-checklist {
+    flex: 0 0 45%;
+    max-width: 45%;
+    background: white;
+    border-radius: 14px;
+    padding: 2rem;
+}
+
+.sobre-checklist-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1.2rem;
+}
+
+.sobre-checklist-grid {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: .9rem;
+}
+
+.sobre-checklist-grid li {
+    display: flex;
+    align-items: flex-start;
+    gap: .6rem;
+    font-size: .88rem;
+    line-height: 1.5;
+    color: #3a3a3a;
+    transition: transform .2s ease;
+}
+
+.sobre-checklist-grid li:hover {
+    transform: translateX(4px);
+}
+
+.sobre-checklist-grid .material-symbols-outlined {
+    color: #01913a;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    margin-top: .1rem;
+}
+
+/* contato */
+
+.contato {
+    width: 100%;
+    background: white;
+    padding: 4.5rem 0 5rem;
+}
+
+.contato-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+}
+
+.contato-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #4a4a4a;
+}
+
+.contato-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.contato-card {
+    background: #fff;
+    border: 1px solid #e3e6ea;
+    border-radius: 14px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.contato-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, .1);
+}
+
+.contato-card-logo {
+    height: 48px;
+    width: auto;
+    align-self: center;
+    margin-bottom: 2rem;
+}
+
+.contato-card-label {
+    font-size: .85rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: .6rem;
+}
+
+.contato-card-info {
+    font-size: .88rem;
+    line-height: 1.6;
+    color: #5b6b7b;
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+}
+
+.contato-card-info strong {
+    color: #1a1a1a;
+}
+
+.contato-card-info a {
+    color: #4a6cf7;
+    text-decoration: none;
+}
+
+.contato-card-block {
+    margin-top: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+}
+
+.contato-card-subtitle {
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+    font-size: .9rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: .3rem;
+}
+
+.contato-card-subtitle .material-symbols-outlined {
+    color: #01913a;
+    font-size: 1.1rem;
+}
+
+.contato-card-block .contato-card-info .material-symbols-outlined {
+    color: #01913a;
+    font-size: 1.1rem;
+}
+
+.contato-card-hours {
+    margin-top: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+    font-size: .85rem;
+    color: #5b6b7b;
+}
+
+.contato-card-hours .material-symbols-outlined {
+    color: #5b6b7b;
+    font-size: 1.1rem;
+}
+
+/* footer */
+
+footer {
+    width: 100%;
+    text-align: center;
+    color: white;
+    background-color: #3F3787;
+}
+
+footer img {
+    width: 100%;
+    display: block;
+    height: 180px;
+}
+
+
+[data-animate] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity .7s ease, transform .7s ease;
+}
+
+[data-animate].is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.programa-cards [data-animate]:nth-child(2) {
+    transition-delay: .1s;
+}
+
+.programa-cards [data-animate]:nth-child(3) {
+    transition-delay: .2s;
+}
+
+.contato-cards [data-animate]:nth-child(2) {
+    transition-delay: .1s;
+}
+
+/* responsividade */
+
+/* tablets */
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .sobre-content {
+        flex-direction: column;
+    }
+
+    .sobre-text,
+    .sobre-checklist {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+/* mobile */
+@media (max-width: 768px) {
+
+    .header-content {
+        padding: 0 1rem;
+        justify-content: space-between;
+    }
+
+    header img {
+        width: 80px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .header-menu {
+        position: fixed;
+        top: 64px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        background: #01913a;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height .35s ease;
+    }
+
+    .header-menu.is-open {
+        max-height: 420px;
+    }
+
+    .header-links {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 0;
+        overflow-x: visible;
+    }
+
+    .header-links a {
+        width: 100%;
+        padding: .9rem 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, .12);
+    }
+
+    .link-monitora {
+        margin: 1rem 1.5rem 1.5rem;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 3rem 0;
+        align-items: center;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-text {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0;
+        align-self: auto;
+    }
+
+    .hero-image {
+        display: none;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-description {
+        max-width: 100%;
+    }
+
+    .hero-buttons {
+        flex-wrap: wrap;
+    }
+
+    .programa {
+        padding: 3rem 0;
+    }
+
+    .programa-banner {
+        padding: 2rem 1.5rem;
+    }
+
+    .programa-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .sobre {
+        padding: 3rem 0;
+    }
+
+    .sobre-title {
+        font-size: 1.5rem;
+    }
+
+    .contato {
+        padding: 3rem 0;
+    }
+
+    .contato-cards {
+        grid-template-columns: 1fr;
+    }
+
+    footer img {
+        height: 110px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .btn {
+        padding: .7rem 1.3rem;
+        font-size: .85rem;
+    }
+}
